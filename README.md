@@ -1,25 +1,42 @@
 # 🌏 Viaje Crespyta — Auckland 2026
 
-Plan completo para emigrar a **Auckland, Nueva Zelanda** con Working Holiday Visa (Chile → NZ): trabajo, inglés kiwi, cultura, viajes y todos los tips, con datos verificados a 2026 y precios en NZD.
+La guía definitiva para que **Yaritza** emigre **sola** de Chile a **Auckland, Nueva Zelanda** con Working Holiday Visa: trabajo, inglés kiwi, cultura, viajes, visas y dinero — con información privilegiada, fotos, videos y guías paso a paso. Datos verificados a 2026, precios en NZD.
 
-Sitio estático (HTML/CSS/JS, sin build) listo para desplegar en Vercel.
+Sitio estático (HTML/CSS/JS, sin build). Diseño propio "Aurora Editorial".
 
 ## Secciones
-- **El Plan** — estrategia en 3 fases: trabajar duro → escapadas de finde → viajes largos
-- **Perfil** — Yaritza Cifuentes, Ingeniera de Calificación/Validación farmacéutica, y empresas objetivo
-- **Trabajo** — profesional (pharma/medtech/alimentos) y rápido (supervivencia)
-- **Inglés Kiwi** — el "fush and chups", slang esencial y te reo māori
-- **Llegada** — setup de las primeras 2 semanas (banco, IRD, SIM, arriendo, salud)
-- **Dinero** — presupuesto, ahorro, auto, apps
-- **Explorar** — imperdibles de Auckland, escapadas cercanas y viajes por la Isla Sur
-- **Cultura** — valores kiwi, respeto māori y comunidad latina
-- **Quedarse +12m** — ruta AEWV + Partner Visa + trámites de Chile
+- **Plan** — estrategia en 3 fases: trabajar duro → escapadas de finde → viaje largo por la Isla Sur
+- **Perfil** — Yaritza (Ingeniera de Calificación/Validación farmacéutica) y empresas objetivo
+- **Trabajo** — profesional (pharma/medtech/alimentos) y rápido, con guía paso a paso
+- **Inglés kiwi** — el "fush and chups", slang, te reo māori y videos para entrenar el oído
+- **Llegada** — setup de las primeras 2 semanas (banco, IRD, SIM, arriendo, salud) + checklist
+- **Dinero** — presupuesto de una persona, calculadora de ahorro, auto, apps
+- **Explorar** — Auckland, escapadas cercanas y la Isla Sur, con fotos y videos
+- **Cultura** — valores kiwi, respeto māori, comunidad latina y viajar sola con seguridad
+- **Residencia** — ruta AEWV → residencia + trámites de Chile
+- **Recursos** — directorio de links oficiales, apps y grupos
 
-## Desarrollo
-No requiere build. Abrir `index.html` en el navegador o servir la carpeta con cualquier servidor estático.
+## Ver el sitio localmente
+No necesita build. Abre `index.html` en el navegador, o sirve la carpeta con cualquier servidor estático.
 
-## Despliegue
-Vercel detecta el sitio automáticamente (framework: *Other*, sin build command). El `index.html` en la raíz es el punto de entrada.
+## Desplegar GRATIS
+
+El sitio es 100% estático, así que se hospeda gratis en varias plataformas. Elige una:
+
+### Opción A — GitHub Pages (gratis, automático) ✅ recomendada
+1. Haz el repo **público** (Settings → General → Change visibility → Public). GitHub Pages es gratis en repos públicos.
+2. Ve a **Settings → Pages → Source: "GitHub Actions"**. El workflow incluido (`.github/workflows/deploy-pages.yml`) publica el sitio.
+3. Queda en vivo en `https://nikolaaa11.github.io/Viaje-Crespyta/`. Cada push a `main` lo redespliega solo.
+
+> Alternativa sin Actions: en **Settings → Pages → Source: "Deploy from a branch" → main → /(root)**. Igual de gratis (el archivo `.nojekyll` ya está para servir bien la carpeta `assets/`).
+
+### Opción B — Netlify (gratis, sirve repos privados)
+1. netlify.com → **Add new site → Import from GitHub** → repo `Viaje-Crespyta`.
+2. Framework: ninguno / "Other". Build command: vacío. Publish directory: `.` (raíz). Deploy.
+3. Queda en vivo en una URL `*.netlify.app`. Mantiene el repo privado.
+
+### Opción C — Cloudflare Pages (gratis)
+pages.cloudflare.com → conectar el repo → framework "None" → deploy.
 
 ---
 *Datos sujetos a cambio: confirmar siempre en fuentes oficiales (immigration.govt.nz, ird.govt.nz, seek.co.nz, at.govt.nz) antes de decidir.*

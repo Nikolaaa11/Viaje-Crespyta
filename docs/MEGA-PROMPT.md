@@ -6,15 +6,17 @@
 
 ## 1. Visión
 
-Una **guía viva, editorial y futurista** para que Nicolás y su pareja **Yaritza Cifuentes** (Ingeniera Química, calificación/validación farmacéutica) emigren de Chile a **Auckland, Nueva Zelanda** con Working Holiday Visa. No es un folleto: es el manual con **información privilegiada** — el dato que solo sabe quien ya vivió el proceso — presentado con fotos, videos, guías paso a paso y herramientas interactivas.
+Una **guía viva, editorial y futurista** para que **Yaritza Cifuentes** (Ingeniera Química, calificación/validación farmacéutica) emigre **SOLA** de Chile a **Auckland, Nueva Zelanda** con Working Holiday Visa. No es un folleto: es el manual con **información privilegiada** — el dato que solo sabe quien ya vivió el proceso — presentado con fotos, videos, guías paso a paso y herramientas interactivas.
 
-**Tono:** cercano, chileno, directo, práctico. Trata al lector de "ustedes". Cero relleno: cada frase aporta un dato accionable, un precio, un link o un truco.
+**IMPORTANTE — es una sola persona:** Yaritza viaja SOLA. Todo presupuesto, arriendo, sueldo y ahorro es para **UNA persona** (pieza individual en flat, un solo sueldo). No hay pareja acompañándola, ni "partner visa" en el plan inmediato (solo se menciona como opción a futuro). Nunca uses "ustedes", "los dos" ni "pareja".
+
+**Tono:** cercano, chileno, directo, práctico. Trátala a ella de **"tú"** (singular, femenino). Cero relleno: cada frase aporta un dato accionable, un precio, un link o un truco.
 
 ## 2. Estrategia del viaje (columna vertebral)
 
 1. **Fase 1 (meses 1–2):** instalarse en 2 semanas + trabajar duro para caja. Findes gratis dentro de Auckland.
 2. **Fase 2 (meses 2–4):** escapadas de fin de semana cerca de Auckland; Yaritza asegura trabajo profesional.
-3. **Fase 3 (mes 4+):** viajes largos por la Isla Sur con los ahorros; decidir si quedarse (ruta AEWV + Partner Visa).
+3. **Fase 3 (mes 4+):** viajes largos por la Isla Sur con los ahorros; decidir si quedarse (su propia ruta AEWV → residencia; traer a alguien vía partner visa es solo una opción futura).
 
 ## 3. Lenguaje de diseño ("Aurora Editorial")
 
