@@ -23,12 +23,10 @@ No necesita build. Abre `index.html` en el navegador, o sirve la carpeta con cua
 
 El sitio es 100% estático, así que se hospeda gratis en varias plataformas. Elige una:
 
-### Opción A — GitHub Pages (gratis, automático) ✅ recomendada
-1. Haz el repo **público** (Settings → General → Change visibility → Public). GitHub Pages es gratis en repos públicos.
-2. Ve a **Settings → Pages → Source: "GitHub Actions"**. El workflow incluido (`.github/workflows/deploy-pages.yml`) publica el sitio.
-3. Queda en vivo en `https://nikolaaa11.github.io/Viaje-Crespyta/`. Cada push a `main` lo redespliega solo.
+### Opción A — GitHub Pages (gratis) ✅ EN USO
+El sitio ya está en vivo en **https://nikolaaa11.github.io/Viaje-Crespyta/**.
 
-> Alternativa sin Actions: en **Settings → Pages → Source: "Deploy from a branch" → main → /(root)**. Igual de gratis (el archivo `.nojekyll` ya está para servir bien la carpeta `assets/`).
+Configuración: repo **público** + **Settings → Pages → Source: "Deploy from a branch" → `main` → `/(root)`**. El archivo `.nojekyll` asegura que la carpeta `assets/` se sirva bien. Cada push a `main` se publica solo (~1 min).
 
 ### Opción B — Netlify (gratis, sirve repos privados)
 1. netlify.com → **Add new site → Import from GitHub** → repo `Viaje-Crespyta`.
