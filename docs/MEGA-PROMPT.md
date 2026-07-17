@@ -8,9 +8,9 @@
 
 Una **guía viva, editorial y futurista** para que **Yaritza Cifuentes** (Ingeniera Química, calificación/validación farmacéutica) emigre **SOLA** de Chile a **Auckland, Nueva Zelanda** con Working Holiday Visa. No es un folleto: es el manual con **información privilegiada** — el dato que solo sabe quien ya vivió el proceso — presentado con fotos, videos, guías paso a paso y herramientas interactivas.
 
-**IMPORTANTE — es una sola persona:** Yaritza viaja SOLA. Todo presupuesto, arriendo, sueldo y ahorro es para **UNA persona** (pieza individual en flat, un solo sueldo). No hay pareja acompañándola, ni "partner visa" en el plan inmediato (solo se menciona como opción a futuro). Nunca uses "ustedes", "los dos" ni "pareja".
+**IMPORTANTE — es una guía para ella, hecha con amor:** la protagonista es Yaritza ("la Crespyta"). Todo presupuesto, arriendo, sueldo y ahorro es para **UNA persona** (pieza individual en flat, un solo sueldo). No hay pareja acompañándola ni "partner visa" en el plan inmediato (solo se menciona como opción a futuro). Nunca uses "ustedes", "los dos" ni "pareja". **REGLA ESTRICTA: la palabra "sola" está PROHIBIDA en todo el sitio** (ni "viajando sola", ni "viajera sola", ni "una sola X" — usa "una única X"). El framing es cálido y positivo: la página está *hecha con mucho amor para ella*, no enfatiza que viaja sin compañía.
 
-**Tono:** cercano, chileno, directo, práctico. Trátala a ella de **"tú"** (singular, femenino). Cero relleno: cada frase aporta un dato accionable, un precio, un link o un truco.
+**Tono:** cercano, chileno, directo, práctico y cariñoso. Trátala a ella de **"tú"** (singular, femenino). Cero relleno: cada frase aporta un dato accionable, un precio, un link o un truco.
 
 ## 2. Estrategia del viaje (columna vertebral)
 
@@ -157,9 +157,37 @@ Cada agente devuelve **solo el HTML interior** de su sección: empieza con un `<
 | llegada | Setup 2 semanas + checklist + salud | setup-llegada + gap-seguro-medico |
 | dinero | Presupuesto, envíos, auto, apps | dinero-logistica |
 | explorar | Auckland + findes + Isla Sur (tabs, fotos) | auckland-imperdibles + findes-cercanos + viajes-lejanos |
+| trekkings | Mapa SVG de NZ + 13 trekkings + galería con leyenda | findes-cercanos + viajes-lejanos |
 | cultura | Cultura kiwi + māori + comunidad latina | cultura-kiwi |
 | quedarse | Ruta a la residencia + trámites Chile | gap-quedarse + gap-documentos-chile |
 | recursos | Directorio de links, apps y grupos | síntesis de todos |
+
+## 8. SÚPER MEGA PROMPT — Sección Trekkings (mapa + fichas + galería con leyenda)
+
+La sección `#trekkings` es la joya visual del sitio. Su estructura:
+
+1. **Mapa SVG estilizado de Nueva Zelanda** (lo provee el armazón, NO lo generan los agentes): ambas islas + Rakiura con gradiente aurora, 13 marcadores numerados con pulso que enlazan a las fichas (`#trek-<id>`), y leyenda clicable con distancia/costo.
+2. **Fichas de trekking** (generadas por agentes): tarjetas `.place.trek` con `id` EXACTO para que el mapa enlace. IDs canónicos:
+   - Día Isla Norte: `trek-rangitoto`, `trek-waitakere` (Kitekite + Mercer Bay), `trek-mauao`, `trek-tongariro`
+   - Día Isla Sur: `trek-hooker`, `trek-roys`, `trek-robroy`, `trek-qthill` (Queenstown Hill)
+   - Great Walks: `trek-abel`, `trek-routeburn`, `trek-milford`, `trek-kepler`, `trek-rakiura`
+3. **Anatomía de una ficha:**
+```html
+<div class="place trek" id="trek-roys">
+  <figure class="ph" data-label="Roys Peak, Wanaka"><img … onerror="this.remove()"><figcaption>Leyenda real <span class="credit">© Fuente</span></figcaption></figure>
+  <div class="pb">
+    <h3>6 · Roys Peak</h3>
+    <p>Qué es, por qué vale la pena, el dato clave.</p>
+    <div class="stats-row"><span class="st">16 km</span><span class="st">5–6 h</span><span class="st">1.200 m ↑</span><span class="st hard">Exigente</span><span class="st free">Gratis</span></div>
+    <div class="tags" style="margin-top:10px"><a class="linkbtn" href="https://www.google.com/maps/search/…" target="_blank" rel="noopener">📍 Mapa</a><a class="linkbtn" href="https://www.doc.govt.nz/…" target="_blank" rel="noopener">🌿 DOC</a></div>
+  </div>
+</div>
+```
+4. **Chips `.st`:** distancia · tiempo · desnivel · dificultad (`.st.hard` si es exigente) · costo (`.st.free` si es gratis). Datos SOLO de los archivos de investigación — no inventar cifras.
+5. **Links por ficha:** siempre un `📍 Mapa` (Google Maps search del track) y un `🌿 DOC` (doc.govt.nz, página oficial del track o del parque; si no hay certeza de la URL exacta, linkear a la búsqueda del sitio DOC).
+6. **Galería "Postales de los senderos":** un `.gallery` de 6–9 `figure.ph` con **foto real verificada** y `figcaption` con **leyenda descriptiva + crédito** (© autor/fuente). Si no hay certeza de la URL, dejar la figure sin `<img>` (el degradado + leyenda se ven perfectos).
+7. **Extras:** un callout `.insider` (reserva de Great Walks abre en mayo y Milford vuela en minutos; alternativas si se agota) y una guía `.steps` corta "Cómo reservar una Great Walk" (cuenta DOC lista, tarjeta guardada, 9:30 am NZ, fechas alternativas).
+8. **Seguridad de montaña** en callout `.warn`: clima alpino cambiante (metservice + adventuresmart.nz), avisar plan a alguien, agua/capas, en invierno Tongariro solo con guía.
 
 ---
 *Datos verificados a 2026. Confirmar siempre en fuentes oficiales antes de decidir.*
