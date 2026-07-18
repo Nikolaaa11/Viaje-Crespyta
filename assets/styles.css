@@ -409,6 +409,75 @@ h4 { font-size: 17px; }
   .bud-fill { transition: none; }
 }
 
+/* ---- Mapa holográfico HUD (mapa 2.0 realista + futurista) ------------ */
+.filterchips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.filterchips button { font-family: var(--disp); font-weight: 600; font-size: 13px; padding: 8px 15px; border-radius: 100px; border: 1px solid var(--line-strong); background: rgba(255,255,255,0.72); color: var(--ink-soft); cursor: pointer; transition: all .16s ease; display: inline-flex; align-items: center; gap: 8px; }
+.filterchips button .sw { width: 9px; height: 9px; border-radius: 50%; box-shadow: 0 0 6px currentColor; }
+.filterchips button.off { opacity: .4; }
+.filterchips button:hover { border-color: var(--violet); transform: translateY(-1px); }
+.sw.t { background: var(--cyan); color: var(--cyan); } .sw.p { background: var(--jade); color: var(--jade); } .sw.a { background: var(--magenta); color: var(--magenta); }
+
+.mapconsole { position: relative; border-radius: var(--radius-lg); padding: 16px 16px 8px; background: radial-gradient(120% 90% at 50% -10%, #1a2350 0%, #0b1020 60%); overflow: hidden; box-shadow: 0 44px 110px -46px rgba(11,16,32,0.75), inset 0 0 0 1px rgba(150,190,255,0.10); }
+.mapconsole::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(120,180,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(120,180,255,0.055) 1px, transparent 1px); background-size: 42px 42px; pointer-events: none; -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 55%, transparent 100%); mask-image: radial-gradient(120% 100% at 50% 0%, #000 55%, transparent 100%); }
+.mapconsole::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 140px; background: linear-gradient(rgba(18,181,255,0.10), transparent); animation: scanline 7s linear infinite; pointer-events: none; }
+@keyframes scanline { 0% { transform: translateY(-140px); } 100% { transform: translateY(760px); } }
+.map-hud { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; font-family: var(--disp); font-size: 10.5px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(170,200,255,0.6); padding: 4px 8px 10px; }
+.map-hud .live { color: var(--jade); display: inline-flex; align-items: center; gap: 6px; }
+.map-hud .live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--jade); box-shadow: 0 0 8px var(--jade); animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .3; } }
+.mapcorner { position: absolute; width: 26px; height: 26px; border: 2px solid rgba(120,180,255,0.35); z-index: 2; }
+.mapcorner.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.mapcorner.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.mapcorner.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.mapcorner.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+.nz2 { width: 100%; height: auto; display: block; position: relative; z-index: 1; }
+.nz2 .land { fill: url(#nzSea); stroke: url(#nzCoast); stroke-width: 4.5; stroke-linejoin: round; filter: url(#nzGlow); }
+.nz2 .grat { stroke: rgba(120,180,255,0.09); stroke-width: 1.5; }
+.nz2 .arc { fill: none; stroke: url(#nzCoast); stroke-width: 3.5; stroke-dasharray: 12 20; opacity: .55; filter: url(#nzGlow); animation: arcdash 3s linear infinite; }
+@keyframes arcdash { to { stroke-dashoffset: -64; } }
+.nz2 .isl { font-family: var(--disp); font-weight: 700; font-size: 34px; letter-spacing: 0.16em; fill: rgba(200,220,255,0.5); }
+.nz2 .subisl { font-size: 21px; letter-spacing: 0.1em; fill: rgba(150,185,235,0.45); }
+.nz2 .city { font-family: var(--body); font-weight: 600; font-size: 29px; fill: rgba(215,230,255,0.85); }
+.nz2 .cityAk { fill: #fff; font-weight: 700; }
+.pin { cursor: pointer; }
+.pin .halo { fill: none; stroke-width: 4; opacity: .5; transform-origin: center; transform-box: fill-box; animation: pinhalo 2.6s ease-out infinite; }
+.pin .core { stroke-width: 5; fill: #0b1020; transition: r .18s ease; filter: drop-shadow(0 0 5px currentColor); }
+.pin .lab { font-family: var(--disp); font-weight: 700; font-size: 27px; fill: #fff; opacity: 0; transition: opacity .18s ease; paint-order: stroke; stroke: #0b1020; stroke-width: 7; text-anchor: middle; }
+.pin:hover .lab { opacity: 1; }
+.pin:hover .core { r: 30; }
+.pin.t .core { stroke: var(--cyan); color: var(--cyan); } .pin.t .halo { stroke: var(--cyan); }
+.pin.p .core { stroke: var(--jade); color: var(--jade); } .pin.p .halo { stroke: var(--jade); }
+.pin.a .core { stroke: var(--magenta); color: var(--magenta); } .pin.a .halo { stroke: var(--magenta); }
+@keyframes pinhalo { 0% { transform: scale(.5); opacity: .6; } 100% { transform: scale(2.3); opacity: 0; } }
+.mapconsole.hide-t .pin.t, .mapconsole.hide-p .pin.p, .mapconsole.hide-a .pin.a { display: none; }
+
+.legendgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 24px; }
+.maplegend a.pk .lg-n { border-color: var(--jade); }
+.maplegend a.av .lg-n { border-color: var(--magenta); }
+@media (max-width: 900px) { .legendgrid { grid-template-columns: 1fr; } }
+
+/* ---- Logo con foto redonda ------------------------------------------- */
+.brand .dot { position: relative; overflow: hidden; }
+.brand .dot .logoimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; z-index: 1; }
+
+/* ---- Cumplimiento de objetivos --------------------------------------- */
+.obj-top { display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: center; margin-bottom: 40px; }
+.obj-photo { position: relative; width: 168px; height: 168px; flex-shrink: 0; border-radius: 50%; padding: 5px; background: var(--grad-aurora); box-shadow: var(--shadow); }
+.obj-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; background: var(--grad-pacific); }
+.obj-photo::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 2px solid rgba(123,92,255,0.35); animation: objring 3.2s ease-in-out infinite; }
+@keyframes objring { 50% { transform: scale(1.06); opacity: .45; } }
+.obj-photo .medal { position: absolute; right: -4px; bottom: 4px; width: 44px; height: 44px; border-radius: 50%; background: var(--grad-sunset); display: grid; place-items: center; font-size: 22px; box-shadow: var(--shadow-sm); border: 3px solid #fff; }
+.obj-meter .obj-num { font-family: var(--disp); font-weight: 800; font-size: clamp(38px, 6vw, 60px); letter-spacing: -0.02em; line-height: 1; }
+.obj-meter .obj-cap { font-size: 14px; color: var(--ink-mute); margin: 4px 0 14px; }
+.obj-bar { height: 16px; border-radius: 100px; background: var(--bg-soft); border: 1px solid var(--line); overflow: hidden; max-width: 520px; }
+.obj-bar span { display: block; height: 100%; width: 0; border-radius: 100px; background: var(--grad-aurora); transition: width 1.1s cubic-bezier(.2,.7,.2,1); }
+.objgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.objgroup { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; background: rgba(255,255,255,0.66); backdrop-filter: blur(10px); }
+.objgroup .chk-head h3 { font-size: 18px; }
+.objgroup .chk { padding: 12px 14px; }
+@media (max-width: 900px) { .obj-top { grid-template-columns: 1fr; text-align: center; justify-items: center; } .obj-bar { margin: 0 auto; } .objgrid { grid-template-columns: 1fr; } }
+
 /* ---- Print ----------------------------------------------------------- */
 @media print {
   .nav, .to-top, .progress, .aurora-bg, .grid-overlay, .scroll-cue, .hero-cta { display: none !important; }
