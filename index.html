@@ -53,13 +53,14 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="wrap">
-    <span class="kicker reveal"><span class="flag">🇨🇱</span> Santiago → Auckland <span class="flag">🇳🇿</span> · Working Holiday 2026</span>
+    <span class="kicker reveal"><span class="flag">🇨🇱</span> Santiago → Auckland <span class="flag">🇳🇿</span> · Despegue: 10 de septiembre 2026</span>
     <h1 class="reveal d1">De Chile a <span class="grad-text serif-accent">Aotearoa</span>.<br>Para ti, con todo el plan.</h1>
     <p class="sub reveal d2">La guía definitiva para que aterrices en Nueva Zelanda, montes tu vida en dos semanas, le des con todo a la pega los primeros meses y salgas a recorrer la <b>Tierra de la Larga Nube Blanca</b>. Con información privilegiada, guías paso a paso, fotos y videos — todo verificado a 2026. <span class="serif-accent">Hecha con mucho amor para la Crespyta</span> 💛</p>
     <div class="hero-cta reveal d3">
       <a href="#plan" class="btn btn-primary">Ver el plan maestro →</a>
       <a href="#trabajo" class="btn btn-ghost">Tu trabajo en Auckland</a>
     </div>
+    <div class="countdown reveal d3" id="countdown" aria-live="polite"></div>
 
     <svg class="skyline reveal d3" viewBox="0 0 1100 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
@@ -109,7 +110,7 @@
 
 <div class="callout insider reveal">
   <div class="ci">💎</div>
-  <p><b>Info privilegiada — el timing lo es todo:</b> los 940 cupos de la Working Holiday abren el <b>15 de octubre a las 10:00 NZDT</b> y se agotan en horas. Postula ese día exacto y apunta a <b>aterrizar en agosto–septiembre</b>: llegas en invierno (arriendos más baratos, menos competencia por pega), trabajas full-time hasta <b>octubre–noviembre</b>, y tu gran viaje cae en <b>noviembre–diciembre</b> — justo cuando florecen los lupinos en Tekapo, abren las Great Walks y todavía no llega la horda de enero. Casi perfecto.</p>
+  <p><b>Info privilegiada — tu timing es casi perfecto:</b> despegas el <b>jueves 10 de septiembre de 2026</b> y, por el cruce de la línea internacional de la fecha, aterrizas en Auckland el <b>sábado 12</b> (sí: te "saltas" un día entero — el vuelo directo de LATAM sale de noche y son ~12-13 horas). Llegas al final del invierno: arriendos más baratos y menos competencia por pega. Trabajas full-time hasta <b>noviembre–diciembre</b>, y tu gran viaje cae en <b>diciembre–enero</b> — pleno verano kiwi: lupinos en flor en Tekapo, Great Walks abiertas y días larguísimos. Un consejo: si puedes, parte el viaje a inicios de diciembre y esquiva la horda de enero. Y ojo con esto: las reservas de las Great Walks para la temporada 2026/27 abrieron en <b>mayo</b> y Milford voló en minutos — pero no está todo perdido: en <b>bookings.doc.govt.nz</b> aparecen <b>cancelaciones</b> todas las semanas (revísalo desde ya, desde Chile), y Kepler, Abel Tasman y el Tongariro Northern Circuit suelen tener cupos disponibles semanas después. Plan B espectacular: la Routeburn en 2 días con noche en Lake Mackenzie Hut.</p>
 </div>
 
 <div class="phases reveal">
@@ -2634,6 +2635,19 @@
       render();
     });
     render();
+  }
+
+  // Cuenta regresiva al vuelo (10 sep 2026, aterrizaje 12 sep NZ)
+  const cd = document.getElementById('countdown');
+  if (cd) {
+    const dep = new Date(2026, 8, 10);
+    const today = new Date(); today.setHours(0,0,0,0);
+    const d = Math.round((dep - today) / 86400000);
+    if (d > 1)       cd.innerHTML = '🛫 Despegas en <b>' + d + '</b> días · aterrizas en Auckland el 12 de septiembre';
+    else if (d === 1) cd.innerHTML = '🛫 ¡<b>MAÑANA</b> despegas! Últimos abrazos y a revisar la maleta';
+    else if (d === 0) cd.innerHTML = '🛫 ¡<b>HOY</b> es el día! Buen viaje, Crespyta 💛';
+    else if (d >= -2) cd.innerHTML = '✈️ ¡Estás cruzando el Pacífico rumbo a <b>Aotearoa</b>!';
+    else              cd.innerHTML = '🇳🇿 ¡Ya estás en Aotearoa! Día <b>' + (-d - 1) + '</b> de tu aventura';
   }
 </script>
 </body>

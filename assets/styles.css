@@ -117,6 +117,8 @@ h4 { font-size: 17px; }
 .hero .sub { max-width: 660px; margin: 0 auto 34px; font-size: clamp(16px, 2.1vw, 21px); color: var(--ink-soft); }
 .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
 .skyline { width: 100%; max-width: 1100px; margin: 12px auto 0; display: block; }
+.countdown { display: inline-flex; align-items: center; gap: 10px; margin: 4px auto 0; font-family: var(--disp); font-weight: 600; font-size: clamp(15px, 2vw, 18px); color: var(--ink-soft); padding: 12px 24px; border-radius: 100px; background: linear-gradient(120deg, rgba(18,181,255,0.10), rgba(123,92,255,0.10)); border: 1px solid rgba(123,92,255,0.22); box-shadow: var(--shadow-xs); }
+.countdown b { font-weight: 800; font-size: 1.25em; background: var(--grad-aurora); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .scroll-cue { margin: 26px auto 0; width: 26px; height: 42px; border: 2px solid var(--line-strong); border-radius: 100px; position: relative; }
 .scroll-cue::before { content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; border-radius: 4px; background: var(--violet); transform: translateX(-50%); animation: cue 1.6s ease-in-out infinite; }
 @keyframes cue { 0%,100% { opacity: 1; transform: translate(-50%, 0); } 50% { opacity: .3; transform: translate(-50%, 10px); } }
